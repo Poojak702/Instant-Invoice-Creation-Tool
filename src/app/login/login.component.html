@@ -1,0 +1,31 @@
+<app-top-nav [userModelObj] = 'userModelObj'></app-top-nav>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-5">
+            <div class="card">
+                <div class="text-center">
+                    <h1>Login</h1>
+                </div>
+               
+                    <form [formGroup]= "loginForm" (ngSubmit)="login()">
+                        <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label">Email</label>
+                            <input formControlName = "email" type="email"  class="form-control" id="userId" name = "userId">
+                            <span class = "text-error" *ngIf="loginForm.controls['email'].dirty && loginForm.hasError('required','email')">*Email Id is requires</span>
+                            <!-- <span class = "text-error" *ngIf = "loginForm.email.errors">Email must be a valid email address</span> -->
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label">Password</label>
+                            <input formControlName = "password" type="password"  class="form-control" id="password" name = "password">
+                            <span class = "text-error" *ngIf="loginForm.controls['password'].dirty && loginForm.hasError('required','password')">*Password is requires</span>
+                        </div>
+                
+                        <button type = "submit" [disabled]="!loginForm.valid" class = "btn btn-secondary">Login</button>&NonBreakingSpace;
+                        <button routerLink="/signup" type = "menu" class ="btn btn-secondary">Sign Up</button>
+                    </form>
+            
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,32 @@
+<app-top-nav></app-top-nav>
+<app-header></app-header>
+<center><br>
+    <h1 style="color : #934b4b">Upload Image To Get Invoice Details.</h1>
+    <div style="margin-top: 3%;">
+        <input style="display: none" type="file" (change)="onFileSelected($event)" #fileInput>
+        <button type="button" class="btn btn-secondary" (click)="fileInput.click()">Pick an Image</button> &nbsp;
+        <button type="button" class="btn btn-secondary" (click)="uploadImage($event)" [disabled]='!isDisable'>Upload
+            Image</button>
+    </div>
+</center><br>
+<div class="container" *ngIf='invoices.length'>
+    <div class='card-header'>Invoice</div>
+    <div class="card m-5 p-3">
+        <div class="card-body">
+            <table class="table table-bordered table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th>Item Name</th>
+                        <th>Item Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of invoices">
+                        <td>{{ item.itemName }}</td>
+                        <td>{{ item.itemPrice }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>

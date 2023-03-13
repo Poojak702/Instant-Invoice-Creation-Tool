@@ -1,0 +1,41 @@
+<nav class="navbar navbar-expand-lg navbar-light ">
+    <!-- <a class="navbar-brand" routerLink="" style="text-align :left;" ></a> -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div *ngIf = 'isProfilePage' style = "padding: 10px; color :indianred;font-size: larger;">
+            <span>
+                <strong>Profile</strong>
+            </span>
+        </div>
+        <div class="header">
+            <!-- <div> -->
+                <span class="float-right" style=" font-size: larger;display: contents;">
+                    <a style="margin-top: -15px; border-bottom: none; text-decoration: none;  " routerLink="/home"  
+                        routerLinkActive="active"><strong>Home</strong>
+                    </a>
+                </span>&nbsp;&nbsp;&nbsp;
+
+            <!-- </div> -->
+            <!-- <div> -->
+                <span class="float-right" style=" font-size: larger;display: contents;">
+                    <a style="margin-top: -15px; border-bottom: none; text-decoration: none; " routerLink="/invoice" class="home_menu"
+                        routerLinkActive="active"><strong>View Invoice</strong>
+                    </a>
+                </span>&nbsp;&nbsp;&nbsp;
+            <!-- </div> -->
+            <!-- <div> -->
+                <span class="float-right" style=" font-size: larger;display: contents;">
+                    <a style="margin-top: -15px; border-bottom: none;text-decoration: none;" routerLink="/qrcodeGenerator" class="home_menu"
+                        routerLinkActive="active"><strong>Generate QR Code</strong>
+                    </a>
+                </span>&nbsp;&nbsp;&nbsp;
+            <!-- </div> -->
+            <!-- <div> -->
+                <span   class="float-right" style=" font-size: larger;display: contents;">
+                    <a style="margin-top: -15px; border-bottom: none; text-decoration: none;" routerLink="/qrcodeScanner" class="home_menu"
+                        routerLinkActive="active"><strong>Scan QR Code</strong>
+                    </a>
+                </span>&nbsp;&nbsp;&nbsp;
+            <!-- </div> -->
+        </div>
+    </div>
+</nav>

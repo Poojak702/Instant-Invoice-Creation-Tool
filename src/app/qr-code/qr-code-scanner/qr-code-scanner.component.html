@@ -1,0 +1,11 @@
+<app-top-nav></app-top-nav>
+<app-header></app-header>
+<center style = "margin-top: 10%;">
+    <h1 style="color : #934b4b">Upload QR Code Image to get Shop Details</h1>
+    <div style = "margin-top: 3%;">
+        <input  style ="display: none" type="file" (change)="onFileSelected($event)" #fileInput>
+        <button type="button" (click)="fileInput.click()" class = "btn btn-secondary">Pick an Image</button> &nbsp;
+        <button class = "btn btn-secondary" type="button" (click) ="uploadImage($event)" [disabled] = '!isDisable' >Upload Image</button>
+    </div>
+    <h1 style = "color: rosybrown; margin-top: 3%;"  *ngIf = "shopName">Shop Details : {{shopName}}</h1>
+</center>

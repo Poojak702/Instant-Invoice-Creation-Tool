@@ -1,0 +1,116 @@
+<app-top-nav></app-top-nav>
+<app-header></app-header>
+<hr class="mt-0 mb-4">
+<div class="row">
+    <div class="col-xl-4">
+        <div class="card mb-4 mb-xl-0">
+            <div class="card-header">Profile Picture</div>
+            <div class="card-body text-center">
+                <input style="display: none" type="file" (change)="onFileSelected($event)" #fileInput>
+                <img *ngIf="userModelObj.photoPath" class="img-account-profile rounded-circle mb-1"
+                    src="{{userModelObj.photoPath}}" alt="" (click)="fileInput.click()">
+
+                <img *ngIf="!userModelObj.photoPath" class="img-account-profile rounded-circle mb-1"
+                    src="http://bootdey.com/img/Content/avatar/avatar1.png" (click)="fileInput.click()">
+                <div *ngIf="userModelObj">
+                    <p>Name: {{userModelObj.firstName}}.{{userModelObj.lastName}}</p>
+                    <p>Email: {{userModelObj.email}}</p>
+                </div>
+                <button class="btn btn-primary" type="button" (click)="uploadImage($event)">Upload new
+                    image</button><br>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-xl-4">
+        <div class="card mb-4">
+            <div class="card-header">Profile Details</div>
+            <div class="card-body">
+                <form [formGroup]="editForm" (ngSubmit)="editUser()">
+                    <div class="row gx-3 mb-3">
+                        <!-- Form Group (first name)-->
+                        <div class="col-md-6">
+                            <label class="small mb-1" for="inputFirstName">First name</label>
+                            <input formControlName="firstName" class="form-control" id="inputFirstName" type="text"
+                                placeholder="Enter your first name" value="{{userModelObj.firstName}}">
+                        </div>
+                        <!-- Form Group (last name)-->
+                        <div class="col-md-6">
+                            <label class="small mb-1" for="inputLastName">Last name</label>
+                            <input formControlName="lastName" class="form-control" id="inputLastName" type="text"
+                                placeholder="Enter your last name" value="{{userModelObj.lastName}}">
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label class="small mb-1" for="inputEmailAddress">Email address</label>
+                        <input readonly class="form-control" id="inputEmailAddress" type="email"
+                            placeholder="Enter your email address" value="{{userModelObj.email}}">
+                    </div>
+                    <!-- Form Row        -->
+                    <div class="row gx-3 mb-3">
+                        <div class="col-md-6">
+                            <label class="small mb-1" for="inputAddress">Address</label>
+                            <input formControlName="address" class="form-control" id="inputAddress" type="text"
+                                placeholder="Enter your Address" value="{{userModelObj.address}}">
+                        </div>
+                        <div class="col-md-6">
+                            <label class="small mb-1" for="inputState">State</label>
+                            <input formControlName="state" class="form-control" id="inputState" type="text"
+                                placeholder="Enter your State" value="{{userModelObj.state}}">
+                        </div>
+                    </div>
+
+                    <!-- Form Row-->
+                    <div class="row gx-3 mb-3">
+                        <div class="col-md-6">
+                            <label class="small mb-1" for="inputPincode">Pincode</label>
+                            <input formControlName="pinCode" class="form-control" id="inputPincode" type="tel"
+                                placeholder="Enter your pinCode" value="{{userModelObj.pinCode}}">
+                        </div>
+
+                    </div>
+                    <!-- Save changes button-->
+                    <button class="btn btn-primary" type="button" (click)="editUser()">Save
+                        changes</button>
+                </form>
+            </div>
+        </div>
+        <!-- </div> -->
+    </div>
+
+<!-- invoice table-->
+    <div class="col-xl-2" *ngIf = "invoices.length">
+        <div class="card mb-4 mb-xl-0">
+            <div class="card-header ">Invoices</div>
+            <div class="card-body text-center " *ngFor=" let invoice of invoices">
+                <button class="btn btn-link btn-block text-left" type="button" 
+                  (click)="getItems(invoice.billId)"> 
+                    <a>{{invoice.billPath}}</a>
+                </button>
+            </div>
+        </div>
+    </div>
+    <!-- Invoice details table -->
+    <div class="col-xl-2" *ngIf = "invoiceItems.length">
+        <div class="card mb-4 mb-xl-0">
+            <div class="card-header ">Invoice Details</div>
+            <div class="card-body text-center " >
+                <table>
+                    <tr>
+                        <th>Item Name</th>
+                        <th>Item Price</th>
+                    </tr>
+                    <tbody *ngFor =  "let item of invoiceItems">
+                        <tr>
+                            <td>{{item.itemName}}</td>
+                            <td>{{item.itemPrice}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+            </div>
+        </div>
+    </div>
+
+</div>
+

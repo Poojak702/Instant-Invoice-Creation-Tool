@@ -1,6 +1,7 @@
 .navbar{
-    background-color:rosybrown;
+    background-color:#ebd2d2;
     text-align: end;
+    height: 40px;
     
 }
 .navbar-light .navbar-nav .nav-link
@@ -14,13 +15,12 @@
 {
     text-decoration: none;
 }
-
-.footer{
-    position: fixed; 
-    bottom: 0%;
-    background-color: #f1e9dc;
-    text-align: left;
-    padding: -6px;
-    width: 100%;
-    color:black;
+.header{
+    position: absolute;
+    top: 5px;
+    right: 15px;
+    display: inline;
+}
+.active{
+    color :indianred;
 }

@@ -1,6 +1,7 @@
 .navbar{
     background-color:rosybrown;
     text-align: end;
+    padding: 4px;
     
 }
 .navbar-light .navbar-nav .nav-link
@@ -13,14 +14,4 @@
 .navbar-light .navbar-nav .nav-link:hover
 {
     text-decoration: none;
-}
-
-.footer{
-    position: fixed; 
-    bottom: 0%;
-    background-color: #f1e9dc;
-    text-align: left;
-    padding: -6px;
-    width: 100%;
-    color:black;
 }

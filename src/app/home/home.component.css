@@ -1,0 +1,53 @@
+/* 
+.float-parent-element { 
+    border:none;
+    width:500px;
+    padding:40px;
+    position: absolute;
+    margin: 200px 500px 100px 400px;
+} 
+.float-child-element { 
+    float: left; 
+    width: 50%; 
+} 
+.seller { 
+    color: black;
+    background: rosybrown; 
+    width: 100px;
+    height: 100px; 
+} 
+.buyer { 
+    color: black;
+    width: 100px;
+    height: 100px;
+    background-color: rosybrown;
+} */
+
+
+
+  
+  .card {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 40%;
+    border-radius: 5px;
+    top:120px;
+    left: 100px;
+    background-color :rosybrown
+    /* #ab9a9a */
+  }
+  
+  .card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  }
+  
+  img {
+    border-radius: 5px 5px 0 0;
+  }
+  
+  .container {
+    padding: 2px 16px;
+  }
+  h1{
+      color: white;
+  }

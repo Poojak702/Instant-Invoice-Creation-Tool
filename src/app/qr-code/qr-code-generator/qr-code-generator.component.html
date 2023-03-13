@@ -1,0 +1,12 @@
+<app-top-nav></app-top-nav>
+<app-header></app-header>
+<form [formGroup]="qrcodeForm" (ngSubmit)="qrCodeGenerator(qrcodeForm.value)">
+    <center><br>
+        <div *ngIf='QrCodeobj'>
+            <label for="shopName">Enter Shop Name : &nbsp;&nbsp;</label>
+            <input type="text" id="shopName" name="shopName" formControlName="shopName"><br><br>
+            <button type="menu" class="btn btn-secondary" (click) = "submit()" >Submit</button><br>
+            <img *ngIf = "showImage == true" class="image" alt="" src="../../../{{qrCodePath}}">
+        </div>
+    </center>
+</form>
